@@ -29,6 +29,6 @@ def single_stage_rotated_detector__simple_test(ctx,
     """
     x = self.extract_feat(img)
     outs = self.bbox_head(x)
-    outs = self.bbox_head.get_bboxes(*outs, img_metas, rescale=rescale)
+    outs = self.bbox_head.get_bboxes(*outs, img_metas, rescale=rescale, with_nms=False)
 
     return outs
